@@ -15,9 +15,7 @@ const App = () => {
 
   return (
     <>
-     <div className="whatsapp">
-          <a href="https://wa.me/5511947727979" target="blank"><img src="./icons8-whatsapp-48.png"/></a>
-        </div>
+    
      <Routes>
     
 

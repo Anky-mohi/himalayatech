@@ -4,8 +4,12 @@ import { useState, useEffect } from "react";
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import PlanCard from "./PlanCard";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+
   const styles = {
     backgroundColor: "#cb6036",
     color: "white",
@@ -95,6 +99,12 @@ const Services = () => {
 
   return (
     <>
+       <div className="whatsapp">
+        <div>
+          <LanguageSwitcher />
+        </div>
+      </div>
+
       <header>
         <div className="logo">
           {" "}
@@ -110,7 +120,7 @@ const Services = () => {
                   {" "}
                   <img className="qa" src="./homepage-icon.png" alt="" />{" "}
                 </span>
-                &nbsp;Home
+                &nbsp;{t("Home")}
               </a>
             </li>
             <li className="ws">
@@ -124,7 +134,7 @@ const Services = () => {
                     alt=""
                   />{" "}
                 </span>
-                &nbsp;About
+                &nbsp;{t("About")}
               </Link>
             </li>
             <li className="ws">
@@ -134,7 +144,7 @@ const Services = () => {
                   {" "}
                   <img className="qa" src="./Services-icon.png" alt="" />{" "}
                 </span>
-                &nbsp;Services
+                &nbsp;{t("Services")}
               </Link>
             </li>
             <li className="ws">
@@ -143,7 +153,7 @@ const Services = () => {
                   {" "}
                   <img className="qa" src="./Icon_ContactUs.png" alt="" />{" "}
                 </span>
-                &nbsp;Contact
+                &nbsp;{t("Contact")}
               </a>
             </li>
             <li className="ws">
@@ -152,7 +162,7 @@ const Services = () => {
                   {" "}
                   <img className="qa" src="./carrer-icon.png" alt="" />{" "}
                 </span>
-                &nbsp;Carrier
+                &nbsp;{t("Carrier")}
               </a>
             </li>
           </ul>
@@ -163,7 +173,7 @@ const Services = () => {
             {" "}
             <div class="introduction__button">
               <Link to="/Contact" class="abc">
-                Get A quote
+                {t("Get A quote")}
               </Link>
             </div>
           </div>
@@ -303,38 +313,26 @@ const Services = () => {
       <br></br>
       <section id="what-we-do">
         <div class="container-fluid">
-          <h2 class="section-title mb-2 h1">WHAT WE DO</h2>
+          <h2 class="section-title mb-2 h1">{t("WHAT WE DO")}</h2>
           <p class="text-center text-muted h5">
-            Having and managing the right marketing strategy is crucial in a
-            rapidly evolving market.
+            {t("Having and managing the right marketing strategy is crucial in a rapidly evolving market.")}
           </p>
           <br></br>
           <div class="row mt-5">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
               <div class="card">
                 <div class="card-block block-1">
-                  <h3 class="card-title">WEB DEVELOPMENT</h3>
+                  <h3 class="card-title">{t("WEB DEVELOPMENT")}</h3>
                   <p class="card-text">
                     <img src="./19362653.jpg" />
-                    Himalayastechies creating and maintaining websites for
-                    businesses and organizations. It involves a range of tasks,
-                    such as designing, coding, testing, and publishing web pages
-                    and applications. Web developers use various programming
-                    languages and frameworks to create functional,
-                    user-friendly, and visually appealing websites. They also
-                    ensure that websites are optimized for search engines,
-                    accessible to users with disabilities, and compatible with
-                    different devices and web browsers. As businesses' online
-                    presence becomes increasingly important, web development has
-                    become a critical component of any company's digital
-                    strategy.
+                  {t("Himalayastechies creating and maintaining websites for businesses and organizations. It involves a range of tasks,such as designing, coding, testing, and publishing web pages and applications. Web developers use various programming languages and frameworks to create functional, user-friendly, and visually appealing websites. They also ensure that websites are optimized for search engines, accessible to users with disabilities, and compatible with different devices and web browsers. As businesses' online presence becomes increasingly important, web development has become a critical component of any company's digital strategy.")}
                   </p>
                   <a
                     href="https://wa.me/919872567925"
                     title="Read more"
                     class="read-more"
                   >
-                    Know more<i class="fa fa-angle-double-right ml-2"></i>
+                    {t("Know more")}<i class="fa fa-angle-double-right ml-2"></i>
                   </a>
                 </div>
               </div>
@@ -342,7 +340,7 @@ const Services = () => {
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
               <div class="card">
                 <div class="card-block block-2">
-                  <h3 class="card-title">Social Media Marketing</h3>
+                  <h3 class="card-title">{t("Social Media Marketing")}</h3>
                   <p class="card-text">
                     <img src="./5618169.jpg" />
                     Himalayastechies creating and sharing content, engaging with
@@ -357,14 +355,14 @@ const Services = () => {
                     consistently engage with their followers. It is also
                     important to track and analyze the performance of social
                     media campaigns to ensure that they are meeting business
-                    objectives.
+                    objectives.{t("Lets work")}
                   </p>
                   <a
                     href="https://wa.me/919872567925"
                     title="Read more"
                     class="read-more"
                   >
-                    Know more<i class="fa fa-angle-double-right ml-2"></i>
+                    {t("Know more")}<i class="fa fa-angle-double-right ml-2"></i>
                   </a>
                 </div>
               </div>
@@ -372,7 +370,7 @@ const Services = () => {
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
               <div class="card">
                 <div class="card-block block-3">
-                  <h3 class="card-title">GLOBAL SUPPORT</h3>
+                  <h3 class="card-title">{t("GLOBAL SUPPORT")}</h3>
                   <p class="card-text">
                     <img src="./Wavy_Eco-06_Single-01.jpg" />
                     Himalayastechies provide services to their customers all
@@ -386,14 +384,14 @@ const Services = () => {
                     multiple time zones to ensure that customers receive quick
                     and effective assistance. Providing global support can help
                     businesses improve customer satisfaction, increase customer
-                    loyalty, and drive sales.
+                    loyalty, and drive sales.{t("Lets work")}
                   </p>
                   <a
                     href="https://wa.me/919872567925"
                     title="Read more"
                     class="read-more"
                   >
-                    Know more<i class="fa fa-angle-double-right ml-2"></i>
+                    {t("Know more")}<i class="fa fa-angle-double-right ml-2"></i>
                   </a>
                 </div>
               </div>
@@ -405,7 +403,7 @@ const Services = () => {
               <div class="card">
                 <div class="card-block block-4">
                   <h3 class="card-title">
-                    Animation and digital film production
+                    {t("Animation and digital film production")}
                   </h3>
                   <p class="card-text">
                     <img src="./151.jpg" />
@@ -420,14 +418,14 @@ const Services = () => {
                     and other digital media platforms. With 3D animation, they
                     can create realistic characters and environments, which can
                     be used in virtual reality and augmented reality
-                    applications.
+                    applications.{t("Lets work")}
                   </p>
                   <a
                     href="https://wa.me/919872567925"
                     title="Read more"
                     class="read-more"
                   >
-                    Know more<i class="fa fa-angle-double-right ml-2"></i>
+                    {t("Know more")}<i class="fa fa-angle-double-right ml-2"></i>
                   </a>
                 </div>
               </div>
@@ -435,7 +433,7 @@ const Services = () => {
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
               <div class="card">
                 <div class="card-block block-5">
-                  <h3 class="card-title">OFFSHORE SERVICES</h3>
+                  <h3 class="card-title">{t("OFFSHORE SERVICES")}</h3>
                   <p class="card-text">
                     <img src="./6182753.jpg" />
                     Offshore services refer to the outsourcing of business
@@ -454,7 +452,7 @@ const Services = () => {
                     title="Read more"
                     class="read-more"
                   >
-                    Know more<i class="fa fa-angle-double-right ml-2"></i>
+                    {t("Know more")}<i class="fa fa-angle-double-right ml-2"></i>
                   </a>
                 </div>
               </div>
@@ -462,7 +460,7 @@ const Services = () => {
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
               <div class="card">
                 <div class="card-block block-6">
-                  <h3 class="card-title">E-commerce</h3>
+                  <h3 class="card-title">{t("E-commerce")}</h3>
                   <p class="card-text">
                     <img src="./female_shopping_from_phone.jpg" />
                     E-commerce, short for electronic commerce, refers to the
@@ -473,14 +471,14 @@ const Services = () => {
                     media. E-commerce has revolutionized the way people shop,
                     offering convenience, accessibility, and flexibility for
                     consumers and businesses alike. It allows businesses to
-                    reach a global audience and operate 24 hours a day.
+                    reach a global audience and operate 24 hours a day.{t("Lets work")}
                   </p>
                   <a
                     href="https://wa.me/919872567925"
                     title="Read more"
                     class="read-more"
                   >
-                    Know more<i class="fa fa-angle-double-right ml-2"></i>
+                    {t("Know more")}<i class="fa fa-angle-double-right ml-2"></i>
                   </a>
                 </div>
               </div>
@@ -493,7 +491,7 @@ const Services = () => {
       <br></br>
       <div>
         <div className="Plan">
-          <h1 className="subhead">Subscription Plans</h1>
+          <h1 className="subhead">{t("Subscription Plans")}</h1>
           <br></br>
           <br></br>
           <div className="plans-container">
@@ -510,13 +508,13 @@ const Services = () => {
       <br></br>
       <br></br>
 
-      
+     
       <footer class="fotter-cnt" id="ftl">
         <div class="main-page-sec main-page-sec2">
           <div class="row">
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">eCommerce </span> <br></br>
+                <span class="title-ftl"> {t("eCommerce")}</span> <br></br>
                 <li class="nav-item">
                   {" "}
                   <a class="nav-link" href="shopify-development-services.php">
@@ -561,7 +559,8 @@ const Services = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">Product Development</span> <br></br>
+                <span class="title-ftl">{t("Product Development")}</span>{" "}
+                <br></br>
                 <li class="nav-item">
                   <a
                     class="nav-link"
@@ -599,7 +598,7 @@ const Services = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">Expertise</span> <br></br>
+                <span class="title-ftl">{t("Expertise")}</span> <br></br>
                 <li class="nav-item">
                   <a class="nav-link" href="https://shopify.webgarh.com/">
                     {" "}
@@ -637,7 +636,7 @@ const Services = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl"> Contacts</span>
+                <span class="title-ftl"> {t("Contacts")}</span>
                 <br></br>
                 <li class="nav-item">
                   <p>
@@ -694,11 +693,7 @@ const Services = () => {
               <div class="right-footer-data">
                 <ul class="nav flex-ico">
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.facebook.com/WebgarhSolutions"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       {" "}
                       <i class="fab fa-facebook-square"></i>
                     </a>
@@ -707,7 +702,7 @@ const Services = () => {
                   <div class="icon-item">
                     <a
                       class="nav-link"
-                      href="https://www.instagram.com/webgarh/"
+                      href="https://www.instagram.com/himalayastechies?igsh=MWVkZjk3c2tndHJubA=="
                       target="_blank"
                     >
                       <i class="fab fa-instagram"></i>
@@ -715,31 +710,19 @@ const Services = () => {
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.youtube.com/@webgarh"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-youtube"></i>
                     </a>
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://twitter.com/Webgarh/"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-twitter"></i>
                     </a>
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.linkedin.com/company/webgarh-solutions-private-limited/"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-linkedin"></i>
                     </a>
                   </div>
@@ -749,7 +732,6 @@ const Services = () => {
           </div>
         </div>
       </footer>
-
        
 
         

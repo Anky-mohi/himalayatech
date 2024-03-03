@@ -1,6 +1,8 @@
 // Portfolio.js
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+
 
 const portfolioData = [
   {
@@ -48,6 +50,7 @@ const portfolioData = [
   },
   // Add more projects as needed
 ];
+
 
 const PortfolioSection = styled.section`
   text-align: center;
@@ -103,6 +106,8 @@ const ProjectCard = styled.div`
 `;
 
 const Portfolio = () => {
+  const { t } = useTranslation();
+
   return (
     <PortfolioSection>
       <ProjectContainer>
@@ -111,7 +116,7 @@ const Portfolio = () => {
             <img src={project.image} alt={project.title} />
             <div className="project-details">
               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                View Project
+                {t('View Project')}
               </a>
             </div>
           </ProjectCard>

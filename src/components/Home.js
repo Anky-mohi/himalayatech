@@ -5,12 +5,30 @@ import Portfolio from "./Portfolio";
 import VideoSection from "./VideoSection";
 import ImageOverlayAnimation from "./ImageOverlayAnimation";
 import UpDownAnimation from "./UpDownAnimation";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Rightupdown from "./Rightupdown";
 import PlanCard from "./PlanCard";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const [messages, setMessages] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [showLanguageButton, setShowLanguageButton] = useState(false);
+
+  useEffect(() => {
+    // Show the language button after a delay when the component mounts
+    const timer = setTimeout(() => {
+      setShowLanguageButton(true);
+    }, 1000); // Adjust the delay as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleChatClick = () => {
+    setIsOpen(!isOpen);
+  };
   const styles = {
     backgroundColor: "#cb6036",
     color: "white",
@@ -21,6 +39,8 @@ const Home = () => {
   const text = {
     color: "white",
   };
+
+  const { t } = useTranslation();
 
   function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -89,6 +109,22 @@ const Home = () => {
       }
     }
   };
+  const [input, setInput] = useState("");
+
+  const handleInput = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (input.trim() === "") return;
+
+    // Add user message to chat history
+    setMessages([...messages, { text: input, user: "user" }]);
+
+    // Clear input field
+    setInput("");
+  };
 
   const navRef = useRef();
 
@@ -99,9 +135,9 @@ const Home = () => {
   return (
     <>
       <div className="whatsapp">
-        <a href="https://wa.me/919872567925" target="blank">
-          <img src="./icons8-whatsapp-48.png" />
-        </a>
+        <div>
+          <LanguageSwitcher />
+        </div>
       </div>
 
       <header>
@@ -119,7 +155,7 @@ const Home = () => {
                   {" "}
                   <img className="qa" src="./homepage-icon.png" alt="" />{" "}
                 </span>
-                &nbsp;Home
+                &nbsp;{t("Home")}
               </a>
             </li>
             <li className="ws">
@@ -133,7 +169,7 @@ const Home = () => {
                     alt=""
                   />{" "}
                 </span>
-                &nbsp;About
+                &nbsp;{t("About")}
               </Link>
             </li>
             <li className="ws">
@@ -143,7 +179,7 @@ const Home = () => {
                   {" "}
                   <img className="qa" src="./Services-icon.png" alt="" />{" "}
                 </span>
-                &nbsp;Services
+                &nbsp;{t("Services")}
               </Link>
             </li>
             <li className="ws">
@@ -152,7 +188,7 @@ const Home = () => {
                   {" "}
                   <img className="qa" src="./Icon_ContactUs.png" alt="" />{" "}
                 </span>
-                &nbsp;Contact
+                &nbsp;{t("Contact")}
               </a>
             </li>
             <li className="ws">
@@ -161,7 +197,7 @@ const Home = () => {
                   {" "}
                   <img className="qa" src="./carrer-icon.png" alt="" />{" "}
                 </span>
-                &nbsp;Carrier
+                &nbsp;{t("Carrier")}
               </a>
             </li>
           </ul>
@@ -172,7 +208,7 @@ const Home = () => {
             {" "}
             <div class="introduction__button">
               <Link to="/Contact" class="abc">
-                Get A quote
+                {t("Get A quote")}
               </Link>
             </div>
           </div>
@@ -191,21 +227,17 @@ const Home = () => {
             </div>
             <div class="col-md-6 cmw custom-margin">
               <h1 class="f-w-100 dwt pb tf dc f40">
-                Get On-Demand Web Development Professionals
+                {t("Get On-Demand Web Development Professionals")}
               </h1>
               <p class="dc pm f22 dwt st f-w-100">
-                With over 5+ years of expertise, we have gained an ultimate
-                grasp on custom website & app development to aid your digital
-                transformation. Our incredible performance on 100+ symbolizes
-                the next-gen web development skills & professionalism we thrive
-                on!
+                {t(
+                  " With over 5+ years of expertise, we have gained an ultimate grasp on custom website & app development to aid your digital transformation. Our incredible performance on 100+ symbolizes the next-gen web development skills & professionalism we thrive on!"
+                )}
               </p>
               <p class="dc pm f22 dwt st f-w-100">
-                We have acquired extensive knowledge and experience in
-                developing custom websites and applications that can assist in
-                your digital transformation. Our exceptional track record of
-                delivering over 100+ projects is a testament to our advanced
-                web development skills and dedication to professionalism.
+                {t(
+                  "We have acquired extensive knowledge and experience in developing custom websites and applications that can assist in your digital transformation. Our exceptional track record of delivering over 100+ projects is a testament to our advanced web development skills and dedication to professionalism."
+                )}
               </p>
               <p class="dwt">
                 <img src="./Badges.png" class="badge-img" />
@@ -214,7 +246,7 @@ const Home = () => {
                 <div class="introduction__button">
                   <Link to="/Contact" class="abc">
                     {" "}
-                    Hire A Team of PROs!
+                    {t("Hire A Team of PROs!")}
                   </Link>
                 </div>
               </li>
@@ -244,27 +276,21 @@ const Home = () => {
               <div class="expertise__rightSide">
                 <div class="expertise__card--wrapper">
                   <div class="expertise__card">
-                    <div class="expertise__heading">E-Commerce</div>
+                    <div class="expertise__heading"> {t("E-Commerce")}</div>
                     <div class="expertise__supportText">
-                      We specialize in creating high-quality e-commerce websites
-                      that help businesses sell products and services to their
-                      customers. Our team works closely with clients to
-                      understand their business needs and create a customized
-                      website that meets their goals. We use the latest
-                      technologies to ensure that our websites are visually
-                      appealing, user-friendly, and optimized for performance,
-                      security, and search engine optimization.
+                      {t(
+                        "We specialize in creating high-quality e-commerce websites that help businesses sell products and services to their customers. Our team works closely with clients to understand their business needs and create a customized website that meets their goals. We use the latest technologies to ensure that our websites are visually appealing, user-friendly, and optimized for performance, security, and search engine optimization"
+                      )}
                     </div>
                   </div>
                   <div class="expertise__card">
-                    <div class="expertise__heading">Product Development</div>
+                    <div class="expertise__heading">
+                      {t("Product Development")}
+                    </div>
                     <div class="expertise__supportText">
-                      Product Development: We are an e-commerce website
-                      development company that specializes in creating
-                      high-quality online storefronts. Our team works closely
-                      with clients to create custom websites that are visually
-                      appealing, easy to use, and optimized for performance
-                      Learn More - Button
+                      {t(
+                        " Product Development: We are an e-commerce website development company that specializes in creating high-quality online storefronts. Our team works closely with clients to create custom websites that are visually appealing, easy to use, and optimized for performance Learn More - Button"
+                      )}
                     </div>
                   </div>
                 </div>
@@ -272,27 +298,28 @@ const Home = () => {
             </div>
           </div>
         </section>
-      
 
         <section id="what-we-do">
           <div class="container-fluid">
-            <h2 class="section-title mb-2 h1">WHAT WE DO</h2>
+            <h2 class="section-title mb-2 h1">{t("WHAT WE DO")}</h2>
             <p class="text-center text-muted h5">
               {" "}
-              Having and managing the right marketing strategy is crucial in a
-              rapidly evolving market.
+              {t(
+                "Having and managing the right marketing strategy is crucial in a rapidly evolving market."
+              )}
             </p>
             <div class="row mt-5">
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <div class="card">
                   <div class="card-block block-1">
-                    <h3 class="card-title">WEB DEVELOPMENT</h3>
+                    <h3 class="card-title">{t("WEB DEVELOPMENT")}</h3>
                     <p class="card-text">
-                      An affordable web design service is what you get when we
-                      design your website.
+                      {t(
+                        "An affordable web design service is what you get when we design your website."
+                      )}
                     </p>
                     <a title="Read more" class="read-more">
-                      <Link to="/Services">Read more </Link>
+                      <Link to="/Services">{t("Read more")} </Link>
 
                       <i class="fa fa-angle-double-right ml-2"></i>
                     </a>
@@ -302,13 +329,14 @@ const Home = () => {
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <div class="card">
                   <div class="card-block block-2">
-                    <h3 class="card-title">Social Media Marketing</h3>
+                    <h3 class="card-title">{t("Social Media Marketing")}</h3>
                     <p class="card-text">
-                      We have different ideas and new generations to focus on
-                      the market with young talents.
+                      {t(
+                        "We have different ideas and new generations to focus on the market with young talents."
+                      )}
                     </p>
                     <a title="Read more" class="read-more">
-                      <Link to="/Services">Read more </Link>
+                      <Link to="/Services"> {t("Read more")}</Link>
 
                       <i class="fa fa-angle-double-right ml-2"></i>
                     </a>
@@ -318,13 +346,14 @@ const Home = () => {
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <div class="card">
                   <div class="card-block block-3">
-                    <h3 class="card-title">GLOBAL SUPPORT</h3>
+                    <h3 class="card-title">{t("GLOBAL SUPPORT")}</h3>
                     <p class="card-text">
-                      We help technology companies grow by providing a
-                      world-class customer experience for their customers.
+                      {t(
+                        "We help technology companies grow by providing a world-class customer experience for their customers."
+                      )}
                     </p>
                     <a title="Read more" class="read-more">
-                      <Link to="/Services">Read more </Link>
+                      <Link to="/Services">{t("Read more")} </Link>
 
                       <i class="fa fa-angle-double-right ml-2"></i>
                     </a>
@@ -337,14 +366,15 @@ const Home = () => {
                 <div class="card">
                   <div class="card-block block-4">
                     <h3 class="card-title">
-                      Animation and digital film production
+                      {t("Animation and digital film production")}
                     </h3>
                     <p class="card-text">
-                      Realized with passion, designed with perfection, the art
-                      of creativity Sample Work..
+                      {t(
+                        "Realized with passion, designed with perfection, the art of creativity Sample Work.."
+                      )}
                     </p>
                     <a title="Read more" class="read-more">
-                      <Link to="/Services">Read more </Link>
+                      <Link to="/Services">{t("Read more")} </Link>
 
                       <i class="fa fa-angle-double-right ml-2"></i>
                     </a>
@@ -354,13 +384,14 @@ const Home = () => {
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <div class="card">
                   <div class="card-block block-5">
-                    <h3 class="card-title">OFFSHORE SERVICES</h3>
+                    <h3 class="card-title">{t("OFFSHORE SERVICES")}</h3>
                     <p class="card-text">
-                      We help you organize business and technology strategies in
-                      a cost-effective way.
+                      {t(
+                        "We help you organize business and technology strategies in a cost-effective way."
+                      )}
                     </p>
                     <a title="Read more" class="read-more">
-                      <Link to="/Services">Read more</Link>
+                      <Link to="/Services">{t("Read more")}</Link>
 
                       <i class="fa fa-angle-double-right ml-2"></i>
                     </a>
@@ -370,14 +401,14 @@ const Home = () => {
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                 <div class="card">
                   <div class="card-block block-6">
-                    <h3 class="card-title">E-commerce</h3>
+                    <h3 class="card-title">{t("E-commerce")}</h3>
                     <p class="card-text">
-                      We have many of the best technologies such as we use
-                      reactjs, node js and many others to build the spa beat
-                      website
+                      {t(
+                        " We have many of the best technologies such as we use reactjs, node js and many others to build the spa beat website"
+                      )}
                     </p>
                     <a title="Read more" class="read-more">
-                      <Link to="/Services">Read more </Link>
+                      <Link to="/Services">{t("Read more")} </Link>
 
                       <i class="fa fa-angle-double-right ml-2"></i>
                     </a>
@@ -391,16 +422,17 @@ const Home = () => {
         <div class="container">
           <div className="introduction__content">
             <h2>
-              <span class="boldtext">WE HAVE MORE SUCCESS </span> <br></br>
+              <span class="boldtext">{t("WE HAVE MORE SUCCESS")} </span>{" "}
+              <br></br>
               <span class="orangecolor">
-                STORIES THAN OTHER AGENCIES HAVE CLIENTS
+                {t("STORIES THAN OTHER AGENCIES HAVE CLIENTS")}
               </span>
             </h2>
             <br></br>
             <p class="pharatext">
-              We grow your business 10 times faster, better and smarter than
-              other Businesses.Himalayastechies turns an idea into a
-              well-recognized brand!!
+              {t(
+                "We grow your business 10 times faster, better and smarter than other Businesses.Himalayastechies turns an idea into a well-recognized brand!!"
+              )}
             </p>
           </div>
         </div>
@@ -412,7 +444,7 @@ const Home = () => {
 
         <div>
           <div className="Plan">
-            <h1 className="subhead">Subscription Plans</h1>
+            <h1 className="subhead">{t("Subscription Plans")}</h1>
             <br></br>
             <br></br>
             <div className="plans-container">
@@ -433,9 +465,9 @@ const Home = () => {
           <div class="container">
             <div class="contact__heading">
               <p>
-                Let's work
+                {t("Lets work")}
                 <br />
-                <span> Together.</span>
+                <span>{t("Together.")}</span>
               </p>
             </div>
             <VideoSection />
@@ -443,26 +475,19 @@ const Home = () => {
               <div class="contact__leftSide">
                 <div class="contact__content">
                   <p>
-                    Let's Work Together! 😁 At our company, we believe in
-                    partnering with our customers to create powerful and
-                    effective solutions that meet their unique needs. We bring
-                    our expertise in web development, e-commerce, and product
-                    development to each project, working collaboratively to
-                    ensure that every detail is executed flawlessly. Our
-                    personalized approach ensures that each client receives the
-                    attention and support they need to achieve their business
-                    goals, and our commitment to excellence ensures results that
-                    exceed expectations
+                    {t(
+                      "Lets Work Together! 😁 At our company, we believe in partnering with our customers to crea te powerful and effective solutions that meet their unique needs. We bring our expertise in web development, e-commerce, and product development to each project, working collaboratively to ensure that every detail is executed flawlessly. Our personalized approach ensures that each client receives the attention and support they need to achieve their business goals, and our commitment to excellence ensures results that exceed expectations"
+                    )}
                   </p>
                 </div>
               </div>
               <div class="contact__rightSide">
                 <div class="contact__form">
-                  <h1 class="contact__form--title">Contact us</h1>
+                  <h1 class="contact__form--title">{t("Contact us")}</h1>
                   <p class="contact__form--description">
-                    At our company, we believe in partnering with our customers
-                    to create powerful and effective solutions that meet their
-                    unique needs.
+                    {t(
+                      "At our company, we believe in partnering with our customers to create powerful and effective solutions that meet their unique needs."
+                    )}
                   </p>
                   <div class="row">
                     <div class="col-md-9 mb-md-0 mb-5">
@@ -476,7 +501,7 @@ const Home = () => {
                           <div class="col-md-6">
                             <div class="md-form mb-0">
                               <label for="name" class="">
-                                Your Name
+                                {t("Your Name")}
                               </label>
                               <input
                                 type="text"
@@ -489,7 +514,7 @@ const Home = () => {
                           <div class="row">
                             <div class="md-form mb-0">
                               <label for="email" class="">
-                                Your Email
+                                {t("Your Email")}
                               </label>
                               <input
                                 type="text"
@@ -504,7 +529,7 @@ const Home = () => {
                           <div class="col-md-12">
                             <div class="md-form mb-0">
                               <label for="subject" class="">
-                                Messages
+                                {t("Messages")}
                               </label>
                               <input
                                 type="text"
@@ -517,7 +542,7 @@ const Home = () => {
                         </div>
                         <div class="text-center text-md-left">
                           <button type="submit" class="btn btn--primary">
-                            send
+                            {t("send")}
                           </button>
                         </div>
                       </form>
@@ -537,7 +562,7 @@ const Home = () => {
           <div class="row">
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">eCommerce </span> <br></br>
+                <span class="title-ftl"> {t("eCommerce")}</span> <br></br>
                 <li class="nav-item">
                   {" "}
                   <a class="nav-link" href="shopify-development-services.php">
@@ -582,7 +607,8 @@ const Home = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">Product Development</span> <br></br>
+                <span class="title-ftl">{t("Product Development")}</span>{" "}
+                <br></br>
                 <li class="nav-item">
                   <a
                     class="nav-link"
@@ -620,7 +646,7 @@ const Home = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">Expertise</span> <br></br>
+                <span class="title-ftl">{t("Expertise")}</span> <br></br>
                 <li class="nav-item">
                   <a class="nav-link" href="https://shopify.webgarh.com/">
                     {" "}
@@ -658,7 +684,7 @@ const Home = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl"> Contacts</span>
+                <span class="title-ftl"> {t("Contacts")}</span>
                 <br></br>
                 <li class="nav-item">
                   <p>
@@ -715,11 +741,7 @@ const Home = () => {
               <div class="right-footer-data">
                 <ul class="nav flex-ico">
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.facebook.com/WebgarhSolutions"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       {" "}
                       <i class="fab fa-facebook-square"></i>
                     </a>
@@ -728,7 +750,7 @@ const Home = () => {
                   <div class="icon-item">
                     <a
                       class="nav-link"
-                      href="https://www.instagram.com/webgarh/"
+                      href="https://www.instagram.com/himalayastechies?igsh=MWVkZjk3c2tndHJubA=="
                       target="_blank"
                     >
                       <i class="fab fa-instagram"></i>
@@ -736,31 +758,19 @@ const Home = () => {
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.youtube.com/@webgarh"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-youtube"></i>
                     </a>
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://twitter.com/Webgarh/"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-twitter"></i>
                     </a>
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.linkedin.com/company/webgarh-solutions-private-limited/"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-linkedin"></i>
                     </a>
                   </div>

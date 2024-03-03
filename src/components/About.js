@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useRef } from "react";
-
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const About = () => {
+  const { t } = useTranslation();
+
   const styles = {
     backgroundColor: "#cb6036",
     color: "white",
@@ -42,88 +45,90 @@ const About = () => {
 
   return (
     <>
-      <header>
-          <div className="logo">
-            {" "}
-            <a href="/">
-              <img className="ls" src="./hmlogo.png" alt="Brand Logo" />
-            </a>
-          </div>
-          <nav ref={navRef}>
-            <ul className="d">
-              <li className="ws">
-                <a href="/">
-                  <span>
-                    {" "}
-                    <img className="qa" src="./homepage-icon.png" alt="" />{" "}
-                  </span>
-                  &nbsp;Home
-                </a>
-              </li>
-              <li className="ws">
-                {" "}
-                <Link to="/About">
-                  <span>
-                    {" "}
-                    <img
-                      className="qa"
-                      src="./Icon_OurProducts.png"
-                      alt=""
-                    />{" "}
-                  </span>
-                  &nbsp;About
-                </Link>
-              </li>
-              <li className="ws">
-                {" "}
-                <Link to="/Services">
-                  <span>
-                    {" "}
-                    <img className="qa" src="./Services-icon.png" alt="" />{" "}
-                  </span>
-                  &nbsp;Services
-                </Link>
-              </li>
-              <li className="ws">
-                <a href="/contact">
-                  <span>
-                    {" "}
-                    <img
-                      className="qa"
-                      src="./Icon_ContactUs.png"
-                      alt=""
-                    />{" "}
-                  </span>
-                  &nbsp;Contact
-                </a>
-              </li>
-              <li className="ws">
-                <a href="/contact">
-                  <span>
-                    {" "}
-                    <img className="qa" src="./carrer-icon.png" alt="" />{" "}
-                  </span>
-                  &nbsp;Carrier
-                </a>
-              </li>
-            </ul>
-            <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-              <FaTimes />
-            </button>
-            <div className="w">
-              {" "}
-              <div class="introduction__button">
-                <Link to="/Contact" class="abc">
-                  Get A quote
-                </Link>
-              </div>
-            </div>
-          </nav>
+     <div className="whatsapp">
+        <div>
+          <LanguageSwitcher />
+        </div>
+      </div>
 
-          <button className="nav-btn" onClick={showNavbar}>
-            <FaBars />
+      <header>
+        <div className="logo">
+          {" "}
+          <a href="/">
+            <img className="ls" src="./hmlogo.png" alt="Brand Logo" />
+          </a>
+        </div>
+        <nav ref={navRef}>
+          <ul className="d">
+            <li className="ws">
+              <a href="/">
+                <span>
+                  {" "}
+                  <img className="qa" src="./homepage-icon.png" alt="" />{" "}
+                </span>
+                &nbsp;{t("Home")}
+              </a>
+            </li>
+            <li className="ws">
+              {" "}
+              <Link to="/About">
+                <span>
+                  {" "}
+                  <img
+                    className="qa"
+                    src="./Icon_OurProducts.png"
+                    alt=""
+                  />{" "}
+                </span>
+                &nbsp;{t("About")}
+              </Link>
+            </li>
+            <li className="ws">
+              {" "}
+              <Link to="/Services">
+                <span>
+                  {" "}
+                  <img className="qa" src="./Services-icon.png" alt="" />{" "}
+                </span>
+                &nbsp;{t("Services")}
+              </Link>
+            </li>
+            <li className="ws">
+              <a href="/contact">
+                <span>
+                  {" "}
+                  <img className="qa" src="./Icon_ContactUs.png" alt="" />{" "}
+                </span>
+                &nbsp;{t("Contact")}
+              </a>
+            </li>
+            <li className="ws">
+              <a href="/contact">
+                <span>
+                  {" "}
+                  <img className="qa" src="./carrer-icon.png" alt="" />{" "}
+                </span>
+                &nbsp;{t("Carrier")}
+              </a>
+            </li>
+          </ul>
+          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+            <FaTimes />
           </button>
-        </header>
+          <div className="w">
+            {" "}
+            <div class="introduction__button">
+              <Link to="/Contact" class="abc">
+                {t("Get A quote")}
+              </Link>
+            </div>
+          </div>
+        </nav>
+
+        <button className="nav-btn" onClick={showNavbar}>
+          <FaBars />
+        </button>
+      </header>
 
       <main>
         <section class="banner">
@@ -131,6 +136,10 @@ const About = () => {
           <div class="banner__content--wrapper">
           </div>
         </section>
+        
+      {/* Hero Section */}
+     
+
 
         <section class="vision">
           <div class="container">
@@ -199,12 +208,13 @@ const About = () => {
 </div>
     
 
+
 <footer class="fotter-cnt" id="ftl">
         <div class="main-page-sec main-page-sec2">
           <div class="row">
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">eCommerce </span> <br></br>
+                <span class="title-ftl"> {t("eCommerce")}</span> <br></br>
                 <li class="nav-item">
                   {" "}
                   <a class="nav-link" href="shopify-development-services.php">
@@ -249,7 +259,8 @@ const About = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">Product Development</span> <br></br>
+                <span class="title-ftl">{t("Product Development")}</span>{" "}
+                <br></br>
                 <li class="nav-item">
                   <a
                     class="nav-link"
@@ -287,7 +298,7 @@ const About = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl">Expertise</span> <br></br>
+                <span class="title-ftl">{t("Expertise")}</span> <br></br>
                 <li class="nav-item">
                   <a class="nav-link" href="https://shopify.webgarh.com/">
                     {" "}
@@ -325,7 +336,7 @@ const About = () => {
 
             <div class="col-md-3">
               <ul class="nav flex-column">
-                <span class="title-ftl"> Contacts</span>
+                <span class="title-ftl"> {t("Contacts")}</span>
                 <br></br>
                 <li class="nav-item">
                   <p>
@@ -382,11 +393,7 @@ const About = () => {
               <div class="right-footer-data">
                 <ul class="nav flex-ico">
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.facebook.com/WebgarhSolutions"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       {" "}
                       <i class="fab fa-facebook-square"></i>
                     </a>
@@ -395,7 +402,7 @@ const About = () => {
                   <div class="icon-item">
                     <a
                       class="nav-link"
-                      href="https://www.instagram.com/webgarh/"
+                      href="https://www.instagram.com/himalayastechies?igsh=MWVkZjk3c2tndHJubA=="
                       target="_blank"
                     >
                       <i class="fab fa-instagram"></i>
@@ -403,31 +410,19 @@ const About = () => {
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.youtube.com/@webgarh"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-youtube"></i>
                     </a>
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://twitter.com/Webgarh/"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-twitter"></i>
                     </a>
                   </div>
 
                   <div class="icon-item">
-                    <a
-                      class="nav-link"
-                      href="https://www.linkedin.com/company/webgarh-solutions-private-limited/"
-                      target="_blank"
-                    >
+                    <a class="nav-link" href="" target="_blank">
                       <i class="fab fa-linkedin"></i>
                     </a>
                   </div>

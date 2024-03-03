@@ -62,7 +62,7 @@ header .nav-btn {
 	background: transparent;
 	border: none;
 	outline: none;
-	color: var(--textColor);
+	color: white;
 	visibility: hidden;
 	opacity: 0;
 	font-size: 1.8rem;
@@ -78,6 +78,7 @@ nav {
 	header .nav-btn {
 		visibility: visible;
 		opacity: 1;
+    color: #3498db;
 	}
 
 	header nav {
@@ -101,13 +102,29 @@ nav {
 		transform: translateY(100vh);
     display: flex;
     color: #ff914c;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #212529;
     
 	}
-
+  .responsive_nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    display: flex;
+    margin-left: -226px;
+    margin-bottom: 300px;
+    display: block;
+    color: #ff914c;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
 	nav .nav-close-btn {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
+    color: #3498db;
 	}
 
 	nav a {
@@ -1130,8 +1147,7 @@ section .section-title{
 
 .hero_image {
   background-image: url(../public/BG.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+ 
 }
 .pb150 {
   padding-bottom: 100px;
@@ -1395,7 +1411,7 @@ header .nav-btn {
 	background: transparent;
 	border: none;
 	outline: none;
-	color: var(--textColor);
+	color:#ff914c ;
 	visibility: hidden;
 	opacity: 0;
 	font-size: 1.8rem;
@@ -1411,6 +1427,7 @@ nav {
 	header .nav-btn {
 		visibility: visible;
 		opacity: 1;
+    color: #ff914c;
 	}
 
 	header nav {
@@ -1430,20 +1447,26 @@ nav {
 	header .responsive_nav {
 		transform: translateY(100vh);
     display: flex;
+    height: 250px;
+    z-index: 9999;
     
 	}
-.responsive_nav ul {
-  list-style: none;
+  .responsive_nav ul {
+    list-style: none;
     display: flex;
     margin: 0;
     display: flex;
-    margin-left: -250px;
-    margin-bottom: 400px;
+    margin-left: -226px;
     display: block;
     color: #ff914c;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
 }
+.responsive_nav .w {
+display: none;
+}
+
+
 	nav .nav-close-btn {
 		position: absolute;
 		top: 2rem;
@@ -1464,7 +1487,63 @@ nav {
     display: block;
   }
 }
+.toggle-button {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 9999; /* Ensure it's above other content */
+}
 
+.language-button {
+  position: fixed;
+  top: 80px;
+  right: -100px; /* Initially hide the button outside the viewport */
+  width: 50px;
+  height: 50px;
+  background-color: #4caf50;
+  background-image: url(../public/icons8-brazil-48.png);
+  border-radius:  10px;
+  cursor: pointer;
+  border-color: #fc8a03;
+  transition: left 0.5s ease; /* Add transition effect */
+  animation: rotateLeftToRight 2s linear ;
+
+}@keyframes rotateLeftToRight {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.language-buttonr {
+  position: fixed;
+  top: 80px;
+  right: -70px; /* Initially hide the button outside the viewport */
+  width: 50px;
+  height: 50px;
+  background-image: url(../public/icons8-usa-48.png);
+  border-radius: 10px;
+  cursor: pointer;
+  border-color: #fc8a03;
+  transition: left 0.5s ease; /* Add transition effect */
+  animation: bounce 0.5s infinite alternate;
+
+}
+.language-buttonr.visible {
+  
+  right: 55px;
+   /* Slide the button into view */
+}
+
+
+.language-button.visible {
+  
+  right: 5px;
+   /* Slide the button into view */
+}
 /* Header.css */
 
 body {
@@ -1697,6 +1776,81 @@ li::before {
   left: 0;
 }
 
+/* About.css */
 
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-section {
+  background-color: #333;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5em;
+}
+
+.introduction-section,
+.team-section,
+.timeline-section,
+.testimonials-section,
+.interactive-section,
+.cta-section {
+  margin-top: 40px;
+}
+
+/* Improved responsiveness */
+@media only screen and (max-width: 768px) {
+  .hero-section {
+    padding: 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2em;
+  }
+}
+
+
+
+/* Add more styles based on your design preferences */
+
+/* src/components/ChatButton.css */
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* src/components/ChatWindow.css */
+.chat-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  transition: height 0.3s ease-in-out;
+}
+
+.message {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
 
 

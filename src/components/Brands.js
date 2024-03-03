@@ -1,6 +1,8 @@
 // Brands.js
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+
 
 const brandsData = [
   'brand1.jpg',
@@ -59,12 +61,15 @@ const BrandLogo = styled.div`
   }
 `;
 
+
 const Brands = () => {
+  const { t } = useTranslation();
+
   return (
     <BrandsSection>
      <div class="contact__heading">
               <p>
-                <span>Brands</span>
+                <span>{t('Brands')}</span>
               </p>
             </div>
       <BrandContainer>
