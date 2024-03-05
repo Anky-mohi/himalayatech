@@ -186,22 +186,22 @@ const Home = () => {
               </Link>
             </li>
             <li className="ws">
-              <a href="/contact">
+            <Link to="/contact">
                 <span>
                   {" "}
                   <img className="qa" src="./Icon_ContactUs.png" alt="" />{" "}
                 </span>
                 &nbsp;{t("Contact")}
-              </a>
+              </Link>
             </li>
             <li className="ws">
-              <a href="/contact">
+            <Link to="/contact">
                 <span>
                   {" "}
                   <img className="qa" src="./carrer-icon.png" alt="" />{" "}
                 </span>
                 &nbsp;{t("Carrier")}
-              </a>
+              </Link>
             </li>
           </ul>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>

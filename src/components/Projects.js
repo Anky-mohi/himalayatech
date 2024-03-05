@@ -27,7 +27,7 @@ const projects = [
         id: 4,
         title: "INNOVA Consulting Group",
         description: "Description of Project 1",
-        industry: "IT & Software",
+        industry: "IT & Softwares",
         technologies: ["React", "Node.js", "Express", "MongoDB","X-Cart","Wordpress","php","Shopify","Joomla","CS-cart","Laravel","Magento","Bigcommerce"],
         imageUrl: "/br/innova.png",
         link: 'https://innovaconsulting.com/'
