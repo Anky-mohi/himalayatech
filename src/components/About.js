@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRef } from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import Portfolios from "../components/Portfolios";
 
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -80,7 +81,7 @@ const About = () => {
                     alt=""
                   />{" "}
                 </span>
-                &nbsp;{t("About")}
+                &nbsp;{t("Portfolio")}
               </Link>
             </li>
             <li className="ws">
@@ -131,69 +132,15 @@ const About = () => {
       </header>
 
       <main>
-        <section class="banner">
-          <img src="./ProductDevelopment.png" alt="About us banner image" />
-          <div class="banner__content--wrapper">
-          </div>
-        </section>
+       
         
       {/* Hero Section */}
      
 
 
-        <section class="vision">
-          <div class="container">
-            <div class="vision__wrapper">
-              <div class="vision__heading">
-                <p class="like-text popup-text">
-                  <span class="text-effect">V</span>
-                  <span class="text-effect">I</span>
-                  <span class="text-effect">S</span>
-                  <span class="text-effect">I</span>
-                  <span class="text-effect">O</span>
-                  <span class="text-effect">N</span>
-                </p>
-              </div>
-              <div class="vision__supportContent">
-                <p class="main--text">
-                Vision We create web and mobile app solutions that will delight your customers At Himalayas Tech, our team is dedicated to building and designing brands through mobile and web app development. We collaborate closely with our clients to develop a detailed plan for the creation of their website or mobile app, ensuring that we deliver the desired results they are looking for. We work remotely or in person. We collaborate with people and computers, but usually not at the same time. The transition between them can be challenging, confusing, or impossible. That's all changing. The next wave of business transformation will shift from building siloed digital capabilities to laying the foundations of a new reality – a shared reality that seamlessly blends our physical lives of atoms and our digital lives of bits. The goal is not an incremental improvement, but a radical change. The real value of this convergence lies in the creation of something fundamentally new. Look at generative AI – many people are using it to generate purely digital images and content, but we already see how it will shape the future of science
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="whatwedo">
-          <div class="container">
-            <div class="whatwedo__wrapper">
-              <div class="whatwedo__heading">
-                <p class="like-text popup-text">
-                  <span class="text-effect">H</span>
-                  <span class="text-effect">I</span>
-                  <span class="text-effect">M</span>
-                  <span class="text-effect">A</span>
-                  <span class="text-effect">L</span>
-                  <span class="text-effect">A</span>
-                  <span class="text-effect">Y</span>
-                  <span class="text-effect">A</span>
-                  <span class="text-effect">S</span>
-                  &nbsp;&nbsp;
+      
+      <Portfolios />
 
-                  <span class="text-effect">T</span>
-                  <span class="text-effect">E</span>
-                  <span class="text-effect">C</span>
-                  <span class="text-effect">H</span>
-                  <span class="text-effect">.</span>
-                  
-                </p>
-              </div>
-              <div class="whatwedo__supportContent">
-                <p class="main--text">
-                When Atoms Meet Bits: The Foundations of Our New Reality When Atoms Meet Bits The Foundations of Our New Reality We live in two parallel realities, one of atoms and the other of bits. When we shop, we walk into a store or go to a web page. We work remotely or in person. We collaborate with people and computers, but usually not at the same time. The transition between them can be challenging, confusing, or impossible. All of that is changing. The next wave of business transformation will shift from building siloed digital capabilities to laying the foundations of a new reality – a shared reality that seamlessly blends our physical lives of atoms and our digital lives of bits. The goal is not an incremental improvement, but a radical change. The real value of this convergence lies in the creation of something fundamentally new. Look at generative AI – many people are using it to generate purely digital images and content, but we already see how it will shape the future of science, enterprise data, how we design and manufacture products, and more.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <div>

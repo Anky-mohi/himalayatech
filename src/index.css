@@ -1669,7 +1669,7 @@ font-size: 16px; }
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   color: #fff; /* White text on all cards */
-  
+  height: 550px;
 }
 
 .plan-card:hover {
@@ -1716,19 +1716,17 @@ font-size: 16px; }
 .subscripchat {
   background-color: red;
   color: white;
-  padding: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1em;
   width: 100px;
   margin-left: 80px;
-    margin-top: 50px;
+
 }
 .subscrip {
   background-color: #4caf50;
   color: white;
-  padding: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -1854,3 +1852,209 @@ li::before {
 }
 
 
+/* Portfolio.css */
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.portfolio-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.filter-group h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #fc8a03; /* Yellow color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #fc8a03; /* Darker yellow on hover */
+}
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+/* Portfolio.css */
+
+.portfolio-container {
+  background-image: url(../public/BG.png);
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.portfolio-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.filter-group h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scrollbar-width: none; /* Hide scrollbar for browsers that support it */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #8a879f;
+  padding: 5px 15px;
+  white-space: nowrap;
+  border: none;
+}
+
+.filter-buttons::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.filter-buttons button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #fc8a03; /* Yellow color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #fc8a03; /* Darker yellow on hover */
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.portfolio-item {
+  width: calc(50% - 20px);
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .portfolio-item {
+    width: calc(100% - 20px);
+  }
+}
+
+.clear {
+  clear: both;
+}
+.info {
+  text-align-last: center;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 5px 15px;
+  white-space: nowrap;
+  border: none;
+}
+.hea {
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: capitalize;
+
+  padding: 5px 15px;
+  white-space: nowrap;
+  border: none;
+}

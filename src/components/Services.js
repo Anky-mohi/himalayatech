@@ -134,7 +134,7 @@ const Services = () => {
                     alt=""
                   />{" "}
                 </span>
-                &nbsp;{t("About")}
+                &nbsp;{t("Portfolio")}
               </Link>
             </li>
             <li className="ws">

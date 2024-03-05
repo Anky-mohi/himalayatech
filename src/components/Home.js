@@ -11,6 +11,7 @@ import Rightupdown from "./Rightupdown";
 import PlanCard from "./PlanCard";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import Portfolios from "../components/Portfolios";
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
@@ -169,7 +170,7 @@ const Home = () => {
                     alt=""
                   />{" "}
                 </span>
-                &nbsp;{t("About")}
+                &nbsp;{t("Portfolio")}
               </Link>
             </li>
             <li className="ws">
