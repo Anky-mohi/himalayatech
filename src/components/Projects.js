@@ -59,11 +59,19 @@ const projects = [
         id: 8,
         title: "Vacation",
         description: "Description of Project 1",
-        industry: "Finance",
+        industry: "Finance & construction",
         technologies: ["React", "Node.js", "Express", "MongoDB"],
         imageUrl: "/br/vacation.png",
         link: 'https://www.absbythebay.com/'
       },{
+        id: 9,
+        title: "vitrinebrasil",
+        description: "",
+        industry: "Retail & Ecommerce",
+        technologies: ["Wordpress"],
+        imageUrl: "/Screenshot 2024-03-05 201711.png",
+        link: 'https://vitrinebrasil.online/'
+      }, {
         id: 9,
         title: "Blue Sound",
         description: "",
@@ -71,6 +79,30 @@ const projects = [
         technologies: ["React", "Node.js", "Express", "MongoDB"],
         imageUrl: "/br/bluesound.png",
         link: 'https://www.bluesound.com/'
+      },{
+        id: 10,
+        title: "Fair Marketing",
+        description: "",
+        industry: "IT & Softwares",
+        technologies: ["React", "Node.js", "Express", "MongoDB"],
+        imageUrl: "/fairmarketing1.jpg",
+        link: 'https://www.fairmarketing.com/'
+      }, {
+        id: 11,
+        title: "Steel in the air",
+        description: "",
+        industry: "Finance & construction",
+        technologies: ["React", "Node.js", "Express", "MongoDB"],
+        imageUrl: "/steel-in-the-air1.jpg",
+        link: 'https://www.steelintheair.com/'
+      }, {
+        id: 12,
+        title: "PROKONSUL",
+        description: "",
+        industry: "Tourism",
+        technologies: ["React", "Node.js", "Express", "MongoDB"],
+        imageUrl: "/prokonsulconsulting (1).jpg",
+        link: 'https://prokonsulconsulting.com/'
       }
     // Add more projects...
   ];
