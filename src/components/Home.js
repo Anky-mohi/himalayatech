@@ -12,6 +12,7 @@ import PlanCard from "./PlanCard";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import Portfolios from "../components/Portfolios";
+import WhatsAppButton from "./WhatsAppButton";
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
@@ -138,6 +139,7 @@ const Home = () => {
       <div className="whatsapp">
         <div>
           <LanguageSwitcher />
+          <WhatsAppButton/>
         </div>
       </div>
 

@@ -11,11 +11,9 @@ const ImageOverlayAnimation = () => {
       
       </div>
       <div className="overlay overlay-2">
-        <img src="./5618169.jpg" alt="Overlay 2" className="overlay-image" />
+        <img src="./top_clutch.co_kintone_india_2022.png" alt="Overlay 2" className="overlay-image" />
       </div>
-      <div className="overlay overlay-3">
-        <img src="./WhatsApp Image 2024-01-18 at 8.22.27 PM.jpeg" alt="Overlay 3" className="overlay-image" />
-      </div>
+     
     </div>
   );
 };
