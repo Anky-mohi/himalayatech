@@ -1431,6 +1431,7 @@ nav {
 	}
 
 	header nav {
+    
 		top: -100vh;
 		left: 0;
 		height: 100%;
@@ -2076,5 +2077,181 @@ li::before {
   }
   50% {
     transform: rotateY(180deg);
+  }
+}
+.crmimg {
+
+height: 100px;
+width: 100px;
+margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+.crmhead {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.crmpara {
+  text-align: center;
+
+}
+.crm{
+ background-image: url(../public/BG.png);
+
+}
+.div {
+  background-color: white;
+  border-radius: 40px;
+  margin-top: 40px;
+  
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: #000;
+  box-shadow: #222222;
+}
+
+/* Define styles for phones (up to 767px) */
+/* Define styles for phones (up to 767px) */
+@media only screen and (max-width: 767px) {
+  .mdb-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .mdb-col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .mdb-col[size="4"] {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  .crmimg {
+    max-width: 100%; /* Ensure the image fits within its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    display: block; /* Ensure proper rendering of the image */
+    margin: 0 auto; /* Center the image horizontally */
+  }
+
+  .div {
+    margin-bottom: 20px; /* Add some space between items */
+  }
+
+  /* Adjust font sizes and margins for better readability on small screens */
+  .crmhead {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .crmpara {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
+.testimonial-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slider-content {
+  text-align: center;
+}
+
+.slider-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .pagination button {
+    font-size: 18px;
+  }
+}
+/* Default styles for desktop */
+.portfolio-container {
+  max-width: 1200px; /* Fixed max-width for desktop */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.portfolio-heading {
+  font-size: 32px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.filter-group:last-child {
+  margin-right: 0;
+}
+
+.portfolio {
+
+  grid-template-columns: repeat(3, 1fr); /* Three columns layout for desktop */
+  grid-gap: 20px;
+}
+
+.portfolio-item {
+  background-color: #f9f9f9;
+
+}
+
+/* Responsive styles for phones and tablets */
+@media (max-width: 768px) {
+  .portfolio-container {
+    max-width: none; /* Remove max-width for smaller screens */
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+
+  .portfolio-heading {
+    font-size: 24px; /* Decrease font size for smaller screens */
+  }
+
+  .filters {
+    flex-direction: column; /* Stack filters vertically for smaller screens */
+    margin-bottom: 10px;
+  }
+
+  .filter-group {
+    flex: none; /* Reset flex value */
+    margin-right: 0;
+    margin-bottom: 10px; /* Add space between filter groups */
+  }
+
+  .portfolio {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for smaller screens */
+    grid-gap: 10px; /* Decrease gap between portfolio items */
   }
 }

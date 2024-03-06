@@ -71,6 +71,7 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio-container">
+      
       <h1 className="portfolio-heading">Portfolio</h1>
       <div className="filters">
         <div className="filter-group">
