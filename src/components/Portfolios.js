@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import projects from '../components/Projects';
 import PortfolioItem from '../components/PortfolioItem';
+import TestimonialSection from './TestimonialSection';
 
 
 const PAGE_SIZE = 5; // Number of options per page
@@ -83,6 +84,7 @@ const Portfolio = () => {
           {renderOptions(technologyOptions, technologyPage, handlePrevTechnology, handleNextTechnology, filterByTechnology)}
         </div>
       </div>
+      
       <div className="portfolio">
         {filteredProjects.map((project) => (
           <PortfolioItem key={project.id} project={project} />

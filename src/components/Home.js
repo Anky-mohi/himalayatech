@@ -442,12 +442,15 @@ const Home = () => {
           </div>
         </div>
         <div className="wer"></div>
-      <TestimonialSection />
-      <ProjectsSection />
+    
         <br></br>
         <br></br>
+        <div className="tet">
+<TestimonialSection/>
+        </div>
+    
         <br></br>
-
+<ProjectsSection/>
         <div>
           <div className="Plan">
             <h1 className="subhead">{t("Subscription Plans")}</h1>
