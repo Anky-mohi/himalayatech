@@ -13,6 +13,8 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import Portfolios from "../components/Portfolios";
 import WhatsAppButton from "./WhatsAppButton";
+import TestimonialSection from "./TestimonialSection";
+import ProjectsSection from "./ProjectsSection";
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
@@ -163,7 +165,7 @@ const Home = () => {
             </li>
             <li className="ws">
               {" "}
-              <Link to="/About">
+              <Link to="/Portfolio">
                 <span>
                   {" "}
                   <img
@@ -440,7 +442,8 @@ const Home = () => {
           </div>
         </div>
         <div className="wer"></div>
-        <Portfolio />
+      <TestimonialSection />
+      <ProjectsSection />
         <br></br>
         <br></br>
         <br></br>

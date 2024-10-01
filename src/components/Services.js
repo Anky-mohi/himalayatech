@@ -125,7 +125,7 @@ const Services = () => {
             </li>
             <li className="ws">
               {" "}
-              <Link to="/About">
+              <Link to="/Portfolio">
                 <span>
                   {" "}
                   <img

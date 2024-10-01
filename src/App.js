@@ -7,6 +7,8 @@ import Services from './components/Services';
 import Brands from './components/Brands';
 import Portfolio from './components/Portfolio';
 import VideoSection from './components/VideoSection';
+import TestimonialSection from './components/TestimonialSection';
+import ProjectsSection from './components/ProjectsSection';
 
 
 
@@ -27,8 +29,9 @@ const App = () => {
         <Route path='/Brands' element={<Brands/>} />
         <Route path='/Portfolio' element={<Portfolio/>} />
         <Route path='/VideoSection' element={<VideoSection/>} />
+        <Route path='/TestimonialSection' element={<TestimonialSection/>} />
+        <Route path='/ProjectsSection' element={<ProjectsSection/>} />
 
-        
 
 
        
