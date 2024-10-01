@@ -9,6 +9,15 @@
     margin-bottom: 30px;
     color: #333;
   }
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .project-link:hover .project-card {
+    transform: translateY(-10px); /* Apply hover effect on the card when the link is hovered */
+  }
   
   .projects-grid {
     display: grid;
@@ -106,9 +115,19 @@
   }
   
   .explore-portfolio-btn:hover {
-    background-color: #0056b3;
+    
     transform: translateY(-5px);
   }
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .project-link:hover .project-card {
+    transform: translateY(-10px); /* Apply hover effect on the card when the link is hovered */
+  }
+  
   
   /* Responsive Design */
   @media (max-width: 768px) {
@@ -124,5 +143,15 @@
       font-size: 1.1rem;
       padding: 12px 25px;
     }
+  }
+  
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .project-link:hover .project-card {
+    transform: translateY(-10px); /* Apply hover effect on the card when the link is hovered */
   }
   
