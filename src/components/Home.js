@@ -15,6 +15,7 @@ import Portfolios from "../components/Portfolios";
 import WhatsAppButton from "./WhatsAppButton";
 import TestimonialSection from "./TestimonialSection";
 import ProjectsSection from "./ProjectsSection";
+import LeadCaptureForm from "./LeadCaptureForm";
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
@@ -142,6 +143,7 @@ const Home = () => {
         <div>
           <LanguageSwitcher />
           <WhatsAppButton/>
+     
         </div>
       </div>
 
@@ -441,16 +443,18 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="wer"></div>
+        
     
-        <br></br>
-        <br></br>
-        <div className="tet">
+        
+       
+        
 <TestimonialSection/>
-        </div>
+        
     
         <br></br>
 <ProjectsSection/>
+<br></br>
+
         <div>
           <div className="Plan">
             <h1 className="subhead">{t("Subscription Plans")}</h1>

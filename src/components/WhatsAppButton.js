@@ -31,7 +31,7 @@ const WhatsAppButton = () => {
       {showButton && (
         <div className="whatsapp-button">
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-           <div className='chat'> <i class="fa fa-comments fa-3x turning-icon turn-left-right"></i> {/* WhatsApp icon with size fa-3x */}</div>
+           <div className='chat'><i class="fa fa-comments fa-3x turning-icon turn-left-right"></i> {/* WhatsApp icon with size fa-3x */}</div>
           </a>
         </div>
       )}

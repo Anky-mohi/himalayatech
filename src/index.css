@@ -9,6 +9,8 @@ body {
 .text-muted {
   color: #ff914c;
 }
+/* Reset z-index for conflicting sections */
+
 
 
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
