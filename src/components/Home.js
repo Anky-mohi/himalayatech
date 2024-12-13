@@ -16,7 +16,10 @@ import WhatsAppButton from "./WhatsAppButton";
 import TestimonialSection from "./TestimonialSection";
 import ProjectsSection from "./ProjectsSection";
 import LeadCaptureForm from "./LeadCaptureForm";
+<<<<<<< HEAD
 import Server from "./Server";
+=======
+>>>>>>> b6006e4a467814eb15c985bc429e296d814ff391
 
 const Home = () => {
   const [messages, setMessages] = useState([]);
@@ -264,7 +267,11 @@ const Home = () => {
             </div>
           </div>
         </section>
+<<<<<<< HEAD
         <Server/>
+=======
+
+>>>>>>> b6006e4a467814eb15c985bc429e296d814ff391
         <section class="expertise">
           <div class="container">
             <div class="expertise__wrapper">
@@ -281,7 +288,10 @@ const Home = () => {
                   </span>
                 </div>
               </div>
+<<<<<<< HEAD
              
+=======
+>>>>>>> b6006e4a467814eb15c985bc429e296d814ff391
               <div class="expertise__rightSide">
                 <div class="expertise__card--wrapper">
                   <div class="expertise__card">

@@ -9,7 +9,10 @@ import Portfolio from './components/Portfolio';
 import VideoSection from './components/VideoSection';
 import TestimonialSection from './components/TestimonialSection';
 import ProjectsSection from './components/ProjectsSection';
+<<<<<<< HEAD
 import Server from './components/Server';
+=======
+>>>>>>> b6006e4a467814eb15c985bc429e296d814ff391
 
 
 
@@ -32,7 +35,11 @@ const App = () => {
         <Route path='/VideoSection' element={<VideoSection/>} />
         <Route path='/TestimonialSection' element={<TestimonialSection/>} />
         <Route path='/ProjectsSection' element={<ProjectsSection/>} />
+<<<<<<< HEAD
         <Route path='/Server' element={<Server/>} />
+=======
+
+>>>>>>> b6006e4a467814eb15c985bc429e296d814ff391
 
 
        
