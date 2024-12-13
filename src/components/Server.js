@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import "./server.css"; // Add your custom CSS
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import traffic from "../assets/img/gym.jpeg";
 import web from "../assets/img/webdevelopment.webp";
@@ -10,30 +10,31 @@ import sof from "../assets/img/inventory1.png";
 import social from "../assets/img/social.jpg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
 const services = [
   {
-    title: "Software Development",
-    description: "Custom software solutions tailored to your needs.",
+    title: "Desenvolvimento de Software",
+    description: "Soluções de software personalizadas para atender às suas necessidades.",
     image: sof,
   },
   {
-    title: "Website Development",
-    description: "Modern and responsive website designs.",
+    title: "Desenvolvimento de Websites",
+    description: "Designs modernos e responsivos de websites.",
     image: web,
   },
   {
-    title: "App Development",
-    description: "High-performance mobile and web applications.",
+    title: "Desenvolvimento de Aplicativos",
+    description: "Aplicativos móveis e web de alto desempenho.",
     image: app,
   },
   {
-    title: "Social Media Management",
-    description: "Engage your audience and grow your brand.",
+    title: "Gestão de Mídias Sociais",
+    description: "Engaje seu público e faça sua marca crescer.",
     image: social,
   },
   {
-    title: "Traffic Management",
-    description: "Drive targeted traffic to your platforms.",
+    title: "Gestão de Tráfego",
+    description: "Direcione tráfego qualificado para suas plataformas.",
     image: traffic,
   },
 ];
@@ -62,10 +63,12 @@ const Server = () => {
       },
     ],
   };
+
   const { t } = useTranslation();
+
   return (
     <div className="services-section">
-      <h2 className="section-title">{t("Our Services")}</h2>
+      <h2 className="section-title">{t("Nossos Serviços")}</h2>
       <Slider {...settings}>
         {services.map((service, index) => (
           <div key={index} className="service-card">
@@ -76,10 +79,9 @@ const Server = () => {
             />
             <h3 className="service-title">{service.title}</h3>
             <p className="service-description">{service.description}</p>
-            <Link to="/Contact" >
-            <button className="contact-button">{t("Contact Now")}</button>
-                    
-                  </Link> 
+            <Link to="/Contact">
+              <button className="contact-button">{t("Contate Agora")}</button>
+            </Link>
           </div>
         ))}
       </Slider>

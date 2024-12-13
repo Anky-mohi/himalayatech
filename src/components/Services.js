@@ -6,6 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import PlanCard from "./PlanCard";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import Server from "./Server";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -184,12 +185,7 @@ const Services = () => {
         </button>
       </header>
 
-      <main>
-        <section class="banner">
-          <img src="./ShopifyAppDevelopment.png" alt="About us banner image" />
-          <div class="banner__content--wrapper"></div>
-        </section>
-      </main>
+     <Server/>
 
       {/* <header>
           <div className="logo">
