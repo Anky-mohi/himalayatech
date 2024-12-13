@@ -1,10 +1,11 @@
 import React from 'react';
 import './TestimonialSection.css'; // Custom styles
-
+import { useTranslation } from "react-i18next";
 const TestimonialSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="testimonial-section">
-      <h2 className="section-title">What Our Clients Say</h2>
+      <h2 className="section-title">{t("What Our Clients Say")}</h2>
       <div className="testimonial-wrapper">
         <div className="testimonial-item">
           <div className="video-container">
@@ -19,7 +20,7 @@ const TestimonialSection = () => {
               allowFullScreen
             ></iframe>
           </div>
-          <p className="client-feedback">"This company helped me achieve my business goals!"</p>
+          <p className="client-feedback"> {t("This company helped me achieve my business goals!")}</p>
           <h4 className="client-name">- Amanda, CEO of E-Shop Inc</h4>
         </div>
 
@@ -36,7 +37,7 @@ const TestimonialSection = () => {
               allowFullScreen
             ></iframe>
           </div>
-          <p className="client-feedback">"Their work is exceptional. Highly recommend!"</p>
+          <p className="client-feedback"> {t("Their work is exceptional. Highly recommend!")}</p>
           <h4 className="client-name">- Liz. , CTO of Brasil tarot Co.</h4>
         </div>
       </div>

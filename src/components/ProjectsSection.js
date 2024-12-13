@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './ProjectsSection.css'; // Custom styles
-
+import { useTranslation } from "react-i18next";
 const projects = [
   {
     title: " Multivendor marketplace",
@@ -62,9 +62,10 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="projects-section">
-      <h2 className="section-title">Our Latest Projects</h2>
+      <h2 className="section-title">{t("Our Latest Projects")}</h2>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <motion.a
@@ -101,7 +102,7 @@ const ProjectsSection = () => {
         transition={{ duration: 0.5, delay: 1.5 }}
       >
         <a href="/portfolio" className="explore-portfolio-btn">
-          Explore Our Portfolio
+          {t("Explore Our Portfolio")}
         </a>
       </motion.div>
     </section>
