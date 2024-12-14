@@ -11,7 +11,7 @@ import TestimonialSection from './components/TestimonialSection';
 import ProjectsSection from './components/ProjectsSection';
 import Server from './components/Server';
 
-
+import Software from './components/Software';
 
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
         <Route path='/TestimonialSection' element={<TestimonialSection/>} />
         <Route path='/ProjectsSection' element={<ProjectsSection/>} />
         <Route path='/Server' element={<Server/>} />
-
+        <Route path='/Software' element={<Software/>} />
       </Routes>
     
   

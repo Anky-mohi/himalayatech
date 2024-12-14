@@ -17,6 +17,7 @@ import TestimonialSection from "./TestimonialSection";
 import ProjectsSection from "./ProjectsSection";
 import LeadCaptureForm from "./LeadCaptureForm";
 import Server from "./Server";
+import Software from "./Software";
 
 
 const Home = () => {
@@ -266,6 +267,9 @@ const Home = () => {
           </div>
         </section>
         <Server/>
+        <Software/>
+        <TestimonialSection/>
+        <ProjectsSection/>
         <section class="expertise">
           <div class="container">
             <div class="expertise__wrapper">
@@ -451,30 +455,14 @@ const Home = () => {
         
        
         
-<TestimonialSection/>
+
         
     
-        <br></br>
-<ProjectsSection/>
-<br></br>
+        
 
-        <div>
-          <div className="Plan">
-            <h1 className="subhead">{t("Subscription Plans")}</h1>
-            <br></br>
-            <br></br>
-            <div className="plans-container">
-              {plans.map((plan) => (
-                <PlanCard
-                  key={plan.id}
-                  plan={plan}
-                  handleSubscribe={handleSubscribe}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
 
+
+        
         <Brands />
 
         <section class="contact">
