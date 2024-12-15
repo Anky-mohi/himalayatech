@@ -1,6 +1,7 @@
 import React from 'react';
 import './TestimonialSection.css'; // Custom styles
 import { useTranslation } from "react-i18next";
+
 const TestimonialSection = () => {
   const { t } = useTranslation();
   return (
@@ -38,7 +39,24 @@ const TestimonialSection = () => {
             ></iframe>
           </div>
           <p className="client-feedback"> {t("Their work is exceptional. Highly recommend!")}</p>
-          <h4 className="client-name">- Liz. , CTO of Brasil tarot Co.</h4>
+          <h4 className="client-name">- Liz, CTO of Brasil Tarot Co.</h4>
+        </div>
+
+        <div className="testimonial-item">
+          <div className="video-container">
+            <iframe
+              className="testimonial-video"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/wqbaNG1Mtwg"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="client-feedback"> {t("Working with them was a game-changer for my business!")}</p>
+          <h4 className="client-name">- Tonyfeitosa, Founder of Startup afbank marketplace </h4>
         </div>
       </div>
     </section>
